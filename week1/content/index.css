@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+}
+
+body, html {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  /* font-size: 20px; */
+  margin: 0;
+  width: 100%;
+}
+
+header {
+  color: white;
+  background-color: darkred;
+}
+
+nav a {
+  color: lightpink;
+  font-family: cursive;
+  text-decoration: line-through;
+}
+
+*.col-1 {
+  width: 8.33%;
+  width: 100px;
+  width: 100em;
+  width: 100rem;
+}
+*.col-2 {
+  float: left;
+  width: 16.67%;
+}
+*.col-3 {
+  width: 25%;
+  width: 100px;
+  width: 100em;
+  width: 100rem;
+}
+*.col-4 {
+  width: 33.33%;
+  width: 100px;
+  width: 100em;
+  width: 100rem;
+}
+*.col-5 {
+  width: 41.67%;
+  width: 100px;
+  width: 100em;
+  width: 100rem;
+}
+*.col-6 {
+  width: 50%;
+  width: 100px;
+  width: 100em;
+  width: 100rem;
+}
+*.col-7 {
+  width: 58.33%;
+  width: 100px;
+  width: 100em;
+  width: 100rem;
+}
+
+*.col-8 {
+  width: 66.67%;
+}
+
+*.col-9 {
+  float: left;
+  width: 75%;
+}
+
+*.col-10 {
+  float: left;
+  width: 83.33%;
+}
+
+*.col-11 {
+  width: 91.67%;
+}
+
+*.col-12 {
+  width: 100%;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.a .a .a .a .a 
+{
+  color: green;
+}
+
+#a 
+{
+  color: yellow;
+}

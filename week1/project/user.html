@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>arlington pizzeria</title>
+
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <header></header>
+
+    <main>
+      <form>
+        <label for="crust">Crust</label>
+        <select name="crust" id="crust">
+          <option value="none">&nbsp;</option>
+          <option value="standard">Standard</option>
+          <option value="sicilian">Sicilian</option>
+          <option value="neopolitan">Neopolitan</option>
+          <option value="deepdish">Deep Dish</option>
+          <option value="nystyle">New York Style</option>
+        </select>
+
+        <label for="small">Small</label>
+        <input type="radio" name="size" id="small" value="small">
+        <label for="medium">Medium</label>
+        <input type="radio" name="size" id="medium" value="medium">
+        <label for="large">Large</label>
+        <input type="radio" name="size" id="large" value="large">
+
+        <label for="pepperoni">Pepperoni</label>
+        <input type="checkbox" name="toppings" id="pepperoni" value="pepperoni">
+        <label for="mushrooms">Mushrooms</label>
+        <input type="checkbox" name="toppings" id="mushrooms" value="mushrooms">
+        <label for="pineapple">Pineapple</label>
+        <input type="checkbox" name="toppings" id="pineapple" value="pineapple">
+
+        <button type="button" id="addPizza">add pizza</button>
+      </form>
+
+      <section>
+        <h2>your order so far...</h2>
+
+        <ul id="orderCart"></ul>
+        <button type="button" id="placeOrder">place your order</button>
+      </section>
+    </main>
+
+    <footer></footer>
+    
+    <script src="js/app.js" type="module"></script>
+  </body>
+</html>
