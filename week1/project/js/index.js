@@ -1,7 +1,29 @@
 // 3 -> 4 -> 2 -> 1
 // index -> user -> store -> order -> pizza
 
-let user = require('./user');
+//let user = require('./user');
+let express = require('express');
+let nunjucks = require('nunjucks');
+let app = express();
+
+nunjucks.configure({
+  autoescape: true,
+  express: app
+});
+
+var something = {
+  user: "fred"
+};
+
+app.use(express.static('./'));
+
+app.get('/', function (req, res) {
+  res.render('index.njk', something);
+});
+
+app.listen(8080, function () {
+  console.log('server is up');
+});
 
 let crusts = [
   { text: 'Select Crust', value: 'none' },

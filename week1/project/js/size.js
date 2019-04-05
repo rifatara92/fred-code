@@ -4,4 +4,4 @@ function Size (n, p) {
   this.price = p;
 }
 
-export { Size };
+module.exports = Size;

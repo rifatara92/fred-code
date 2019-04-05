@@ -1,4 +1,4 @@
-import { Size } from "./size.js";
+let Size = require('./size');
 
 let pizzaSizes = [
   new Size('small', 5),

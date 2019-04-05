@@ -16,13 +16,11 @@
       <header class="row">
         <h1>arlington pizzeria</h1>
 
-        <nav>
-          <span><a href="location.html">Locations</a></span>
-          <span><a href="user.html">User</a></span>
-        </nav>
+        {% include "header-nav.html" %}
       </header>
 
       <main class="row">
+        {% if user == "fred" %}
         <section>
           <figure>
             <img src="" alt="">
@@ -43,6 +41,7 @@
         <section>
           <p></p>
         </section>
+        {% endif %}
       </main>
 
       <footer class="row">
