@@ -1,9 +1,11 @@
-import { Location } from "./location.js";
-import { User } from "./user.js";
+import { storeCollection } from "./store.js";
+import { userCollection } from "./user.js";
 import { Pizza } from "./pizza.js";
 import { Order } from "./order.js";
 
 function validatePizza() {
+  let userCollection = document.querySelector('select[name="user"]');
+  let storeCollection = document.querySelector('select[name="store"]');
   let crustCollection = document.querySelector('select[name="crust"]');
   let sizeCollection = document.querySelectorAll('input[name="size"]');
   let toppingCollection = document.querySelectorAll('input[name="toppings"]');
@@ -19,7 +21,15 @@ function validatePizza() {
     if (t.checked) {
       toppings.push(t.value);
     }
-  })
+  });
+
+  if (userCollection.value.toLowerCase() == 'none') {
+    return;
+  }
+
+  if (storeCollection.value.toLowerCase() == 'none') {
+    return;
+  }
 
   if (crustCollection.value.toLowerCase() == 'none') {
     return;
@@ -35,6 +45,8 @@ function validatePizza() {
 
   crust = crustCollection.value;
   pizzas.push(new Pizza(crust, size, toppings));
+  user = userCollection.value;
+  store = storeCollection.value;
   addToOrderCart(pizzas);
 }
 
@@ -55,10 +67,25 @@ function createOrder () {
   let order = new Order();
 
   order.pizzas = pizzas;
-  console.log(order.cost());
+  attachStore(store, order);
+  attachUser(user, order);
+}
+
+function attachStore(sl, o) {
+  let store = storeCollection[sl];
+
+  store.orders.push(o);
+}
+
+function attachUser(u, o) {
+  let user = userCollection[u];
+
+  user.orders.push(o);
 }
 
 let pizzas = [];
+let user = null;
+let store = null;
 let addPizza = document.querySelector('#addPizza');
 let placeOrder = document.querySelector('#placeOrder');
 
