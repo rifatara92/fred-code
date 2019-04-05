@@ -1,5 +1,4 @@
-import { Address } from "./address.js";
-import { Order } from "./order.js";
+let order = require('./order');
 
 let storeCollection = {
   east: new Store('EastArlington'),
@@ -15,4 +14,4 @@ function Store (n) {
   this.orders = [];
 }
 
-export { Store, storeCollection };
+module.exports = {};

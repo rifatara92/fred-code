@@ -1,4 +1,4 @@
-import { Pizza } from "./pizza.js";
+let pizza = require('./pizza');
 
 function Order () {
   this.id = null;
@@ -14,4 +14,4 @@ function Order () {
   }
 }
 
-export { Order };
+module.exports = {};

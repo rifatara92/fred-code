@@ -1,5 +1,4 @@
-let Address = require('./address').default;
-//import { Order } from "./order.js";
+let location = require('./location');
 
 let userCollection = [
   new User(1),
@@ -15,7 +14,4 @@ function User () {
   this.orders = [];
 }
 
-module.exports = {
-  User: User,
-  userCollection: userCollection
-};
+module.exports = {};

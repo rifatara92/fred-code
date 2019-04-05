@@ -86,13 +86,18 @@ function attachUser(u, o) {
 let pizzas = [];
 let user = null;
 let store = null;
-let addPizza = document.querySelector('#addPizza');
-let placeOrder = document.querySelector('#placeOrder');
 
-if (addPizza) {
-  addPizza.addEventListener('click', validatePizza);
-}
+let makeOrder = document.querySelector('#makeOrder');
+let makePizza = document.querySelector('#makePizza');
 
-if (placeOrder) {
-  placeOrder.addEventListener('click', createOrder);
-}
+if (makeOrder) {
+  makeOrder.addEventListener('click', function () {
+
+  });
+};
+
+if (makePizza) {
+  makePizza.addEventListener('click', function () {
+
+  });
+};
