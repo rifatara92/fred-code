@@ -38,5 +38,5 @@ server.route('/user')
   });
 
 server.listen(serverPort, function () {
-  console.log('server is running');
+  console.log(`server is running and listening on port ${serverPort}`);
 });
