@@ -24,7 +24,7 @@ server.route('/location')
 
 server.route('/order')
   .get(function (request, response) {
-    reponse.render('order.html', {});
+    response.render('order.html', {});
   });
 
 server.route('/pizza')

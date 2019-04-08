@@ -2,21 +2,15 @@
 
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% include 'page-meta.html' %}
 
     <title>mavericks pizzeria</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    {% include 'page-link.html' %}
   </head>
 
   <body>
-    <header>
-      <h1></h1>
-
-      <nav></nav>
-    </header>
+    {% include 'page-header.html' %}
 
     <main>
       <section>
@@ -38,14 +32,12 @@
         </figure>
       </section>
 
-      <section></section>
+      <section>
+        <button>ready to order</button>
+      </section>
     </main>
 
-    <footer>
-      <nav></nav>
-
-      <small></small>
-    </footer>
+    {% include 'page-footer.html' %}
     
     <script src="js/client.js"></script>
   </body>
