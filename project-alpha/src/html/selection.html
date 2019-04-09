@@ -1,7 +1,7 @@
 <section>
   <h2>select pizza</h2>
 
-  <form>
+  <form action="/pizza" method="post" enctype="application/x-www-form-urlencoded">
     <label for="location">Location</label>
     <select name="location" id="location">
       {% for location in selection.locations %}

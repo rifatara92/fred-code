@@ -29,14 +29,16 @@ server.route('/location')
 
 server.route('/order')
   .post(function (request, response) {
-    currentOrder = response.json(request.body);
     currentUser.placeOrder(currentOrder);
     currentLocation.takeOrder(currentOrder);
   });
 
 server.route('/pizza')
-  .get(function (request, response) {
-    response.render('pizza.html', {});
+  .post(function (request, response) {
+    currentPizza = response.json(request.body);
+    currentOrder.push(currentPizza);
+    currentUser.makeOrder(currentOrder);
+    currentLocation.makeOrder(currentOrder);
   });
 
 server.route('/user')
