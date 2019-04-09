@@ -1,4 +1,5 @@
 let
+  bodyParser = require('body-parser'),
   express = require('express'),
   location = require('./location'),
   nunjucks = require('nunjucks'),
@@ -15,6 +16,8 @@ nunjucks.configure('src/html', {
   express: server
 });
 
+server.use(bodyParser.json());
+server.use(bodyParser.urlencoded({ extended: true }));
 server.use(express.static('dist'));
 
 server.route('/')
@@ -35,15 +38,27 @@ server.route('/order')
 
 server.route('/pizza')
   .post(function (request, response) {
-    currentPizza = response.json(request.body);
-    currentOrder.push(currentPizza);
-    currentUser.makeOrder(currentOrder);
-    currentLocation.makeOrder(currentOrder);
+    console.log(request.body);
+    // currentPizza = response.json(request.body);
+    // currentOrder.push(currentPizza);
+    // currentUser.makeOrder(currentOrder);
+    // currentLocation.makeOrder(currentOrder);
+    response.send('all done');
   });
 
 server.route('/user')
   .get(function (request, response) {
-    response.render('user.html', {selection: {crusts: [], locations: [], sizes: [], toppings: []}});
+    response.render('user.html', { 
+      selection: {
+        crusts: [], 
+        locations: [
+          { text: 'EastCampus', value: 'east' },
+          { text: 'WestCampus', value: 'west' }
+        ], 
+        sizes: [], 
+        toppings: []
+      }
+    });
   });
 
 server.listen(serverPort, function () {
