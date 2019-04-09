@@ -1,0 +1,31 @@
+<section>
+  <h2>select pizza</h2>
+
+  <form>
+    <label for="location">Location</label>
+    <select name="location" id="location">
+      {% for location in selection.locations %}
+      <option value="{{ location.value }}">{{ location.text }}</option>
+      {% endfor %}
+    </select>
+    
+    <label for="crust">Crust</label>
+    <select name="crust" id="crust">
+      {% for crust in selection.crusts %}
+      <option value="{{ crust.value }}">{{ crust.text }}</option>
+      {% endfor %}
+    </select>
+
+    {% for size in selection.sizes %}
+    <input type="radio" name="size" id="{{ size.text }}" value="{{ size.value }}">
+    <label for="{{ size.text }}">{{ size.text | capitalize }}</label>
+    {% endfor %}
+
+    {% for topping in selection.toppings %}
+    <input type="radio" name="toppings" id="{{ topping.text }}" value="{{ topping.value }}">
+    <label for="{{ topping.text }}">{{ topping.text | capitalize }}</label>
+    {% endfor %}
+
+    <button type="button">make pizza</button>
+  </form>
+</section>

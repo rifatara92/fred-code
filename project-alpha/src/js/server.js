@@ -1,7 +1,12 @@
 let
-  express = require('express');
-  nunjucks = require('nunjucks');
+  express = require('express'),
+  location = require('./location'),
+  nunjucks = require('nunjucks'),
+  user = require('./user');
 
+let currentLocation = null;
+let currentOrder = null;
+let currentUser = null;
 let server = express();
 const serverPort = 8000;
 
@@ -23,8 +28,10 @@ server.route('/location')
   });
 
 server.route('/order')
-  .get(function (request, response) {
-    response.render('order.html', {});
+  .post(function (request, response) {
+    currentOrder = response.json(request.body);
+    currentUser.placeOrder(currentOrder);
+    currentLocation.takeOrder(currentOrder);
   });
 
 server.route('/pizza')
@@ -34,7 +41,7 @@ server.route('/pizza')
 
 server.route('/user')
   .get(function (request, response) {
-    response.render('user.html', {});
+    response.render('user.html', {selection: {crusts: [], locations: [], sizes: [], toppings: []}});
   });
 
 server.listen(serverPort, function () {

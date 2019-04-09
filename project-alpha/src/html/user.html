@@ -9,11 +9,35 @@
     {% include 'page-link.html' %}
   </head>
 
-  <body>
+  <body class="container-fluid">
     {% include 'page-header.html' %}
 
-    <main></main>
+    <main class="row">
+      <section class="col-md-12">
+        <h2>recent orders</h2>
+
+        <ul>
+          {% for order in user.orders %}
+          <li>
+            {% for pizza in order.pizzas %}
+            <p>{{ pizza }}</p>
+            {% endfor %}
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <div class="col-md-8">
+        {% include 'selection.html' %}
+      </div>
+
+      <div class="col-md-4">
+        {% include 'order.html' %}
+      </div>
+    </main>
 
     {% include 'page-footer.html' %}
+
+    <script src="js/client.js"></script>
   </body>
 </html>
